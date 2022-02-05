@@ -1,7 +1,7 @@
-# NetSIG Presentation - [Presentation Title]
+# NetSIG Presentation - Who's Knocking? A Brief Intro to Network Scanning
 
-[![Actions Status](https://github.com/netserf/template-presentation-repo/workflows/Markdown%20Lint/badge.svg)](https://github.com/netserf/template-presentation-repo/actions)
-[![Actions Status](https://github.com/netserf/template-presentation-repo/workflows/Markdown%20Links/badge.svg)](https://github.com/netserf/template-presentation-repo/actions)
+[![Actions Status](https://github.com/netserf/netsig-presentation-network-scanning/workflows/Markdown%20Lint/badge.svg)](https://github.com/netserf/netsig-presentation-network-scanning/actions)
+[![Actions Status](https://github.com/netserf/netsig-presentation-network-scanning/workflows/Markdown%20Links/badge.svg)](https://github.com/netserf/netsig-presentation-network-scanning/actions)
 
 ## Presentation Summary
 
@@ -10,7 +10,7 @@ Topics will include ...
 
 ## Presentation Slides
 
-* [Presentation Title](dummy-slides.txt)
+* [Who's Knocking? A Brief Intro to Network Scanning](netsig-presentation-network-scanning.pdf)
 
 ## Who is NetSIG?
 
