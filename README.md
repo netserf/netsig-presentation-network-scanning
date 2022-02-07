@@ -5,8 +5,9 @@
 
 ## Presentation Summary
 
-In this session we'll look at ...
-Topics will include ...
+In this session we'll look at various tools used to scan networks and we'll go
+through a series of exercises to help you reveal potential holes in your
+network security.
 
 ## Presentation Slides
 
@@ -26,7 +27,7 @@ These presentations are currently hosted online.
 
 ## Where can I find the cheatsheet for this presentation?
 
-* [Template Cheat Sheet](template-cheat-sheet.txt)
+* [Network Scanning](network-scanning-cheat-sheet.txt)
 
 ## Contributing
 
