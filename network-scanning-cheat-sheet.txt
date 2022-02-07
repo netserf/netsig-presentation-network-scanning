@@ -1,0 +1,99 @@
+# Cheat Sheet for NetSIG presentation - Network Scanning
+# For more details:
+# https://github.com/netserf/netsig-presentation-network-scanning
+
+# Installations for Ubuntu 18.04
+sudo apt update
+sudo apt install -y wireshark netcat nmap
+
+# Installations for CentOS 7
+sudo yum check-update
+sudo yum install -y wireshark netcat nmap
+
+
+# Exercise - ping your partner
+# ============================
+# Setup:
+sudo wireshark
+    # capture on your wireless interface - e.g. wlan0
+    # display filter:  icmpv6 or icmp
+
+# Try:
+ping -6 vicpimakers.ca
+ping -4 vicpimakers.ca
+
+
+# Exercise - traceroute and capture
+# =================================
+# Setup:
+nslookup vicpimakers.ca
+    # collect IPv4 and / or IPv6
+sudo wireshark
+    # again, capture on your wireless interface - e.g. wlan0
+    # display filters:  
+    ip.addr == <IP> or icmp        # for IPv4
+    ipv6.addr == <IP> or icmpv6    # for IPv6
+
+# Try:
+traceroute -4 vicpimakers.ca -m 16
+traceroute -6 vicpimakers.ca -m 16
+
+
+# Exercise - netcat and capture
+# ==============================
+# Setup:
+nslookup vicpimakers.ca
+    # collect IPv4 and / or IPv6
+sudo wireshark
+    # again, capture on your wireless interface - e.g. wlan0
+    # display filters:  
+    ip.addr == <IP>      # for IPv4
+    ipv6.addr == <IP>    # for IPv6
+
+# Try:
+nc -v -4 vicpimakers.ca 80
+nc -v -6 vicpimakers.ca 80
+
+
+# Exercise - nmap host port scan
+# ==============================
+# Setup:
+nslookup vicpimakers.ca
+    # collect IPv4 and / or IPv6
+sudo wireshark
+    # again, capture on your wireless interface - e.g. wlan0
+    # display filter:  
+    ipv6.addr == <IP>   # for IPv6
+    ip.addr == <IP>     # for IPv4
+
+# Try:
+nmap -6 vicpimakers.ca
+nmap -4 vicpimakers.ca
+
+
+# Exercise - nmap subnet discovery
+# ================================
+# Setup:
+ip -4 route   # record local IPv4 subnet
+ip -6 route   # record local IPv6 subnet
+sudo wireshark
+    # any suggestions ?
+
+# Try:
+nmap -4 -sn <IPv4 subnet>
+nmap -6 -sn <IPv6 subnet>
+subnetcalc <IPv6 subnet>
+
+
+# Exercise - nmap OS and service detection
+# ========================================
+# Setup:
+default4=$(ip -4 route | grep ^default | awk ‘{print $3}’)
+default6=$(ip -6 route | grep ^default | awk ‘{print $3}’)
+echo $default4 $default6
+sudo wireshark
+    # any suggestions ?
+
+# Try:
+nmap -4 -A -T4 $default4
+nmap -6 -A -T4 $default6
